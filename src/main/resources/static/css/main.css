@@ -1,0 +1,80 @@
+body{
+  background: url('../img/cnooc.jpg') no-repeat;
+  background-size: 100vw 100vh;
+}
+
+.biggest {
+  width: 1480px;
+}
+.main-color {
+  color: #00aff8;
+}
+.standard-color {
+  color: #364347;
+}
+.floor-color {
+  color: #5e696d;
+}
+.Text-comp-color {
+  color: #93a4aa;
+}
+.tagging-color {
+  color: #b2c6cd;
+}
+.secondary-color {
+  color: #d6e1e5;
+}
+.partition-line {
+  color: #efeff4;
+}
+.background-color {
+  background-color: #ffffff;
+}
+.navigation-size {
+  font-size: 18px;
+}
+.title-size,
+.floor-first {
+  font-size: 16px;
+}
+.tip-first,
+.text-first,
+.floor-second {
+  font-size: 14px;
+}
+.tip-second,
+.text-second {
+  font-size: 12px;
+}
+.butt-gray:hover {
+  background-color: #97a8ad !important;
+}
+.butt-blue:hover {
+  background-color: #009dde !important;
+}
+
+#border{
+  opacity: 0.85;
+}
+
+.icon{
+  width: 0;
+  height: 0;
+}
+
+#icon_wrong{
+  position: relative;
+  bottom: 60px;
+  left: 290px;
+}
+
+#icon_error{
+  position: relative;
+  bottom: 60px;
+  left: 290px;
+}
+
+.show_msg{
+  display: flex;
+  flex-direction: row;
+}

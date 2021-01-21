@@ -1,0 +1,88 @@
+.form {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 3px 3px 9px 3px #ccc;
+}
+
+.form_title {
+    margin: 20px 15px;
+}
+
+.form label {
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+.form .form_group {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_group input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form_group input:focus {
+    border: none;
+}
+
+.button_group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_bottom_add {
+    border: 1px solid #ccd;
+    background-color: white;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button_bottom_add:active{
+    background-color: #009588;
+    color: white;
+}
+
+.button_bottom_cancel {
+    border: 1px solid #ccd;
+    background-color: white;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button_bottom_cancel:active{
+    background-color: #009588;
+    color: white;
+}
+
+.button_bottom_change {
+    border: 1px solid #ccd;
+    background-color: white;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button_bottom_change:active{
+    background-color: #009588;
+    color: white;
+}

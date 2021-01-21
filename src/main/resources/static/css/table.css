@@ -1,0 +1,170 @@
+li{
+    list-style: none;
+}
+
+.table{
+background-color: white;
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+}
+
+.table img{
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+}
+
+.table_nav{
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.table_nav_left{
+    display: flex;
+}
+
+.table_nav_right{
+    display: flex;
+}
+
+.table_nav_ul{
+    display:  flex;
+}
+
+.table_nav_ul li{
+    padding: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.table_nav_ul>li>i{
+    margin: 5px;
+}
+
+.table_nav_ul li:first-of-type{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.table_nav_ul li:last-of-type{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.table_nav_input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 0 10px;
+}
+
+tr{
+    border-bottom: 1px solid #ccc;
+    height: 50px;
+}
+
+.table tbody tr:hover{
+    background-color: #ccc !important;
+}
+
+.table thead{
+    border-bottom: 2px solid #ccc;
+}
+
+.table tbody>tr:nth-child(odd){
+    background-color: #f3f3f3;
+}
+
+.table thead th{
+    margin: auto 15px;
+    padding: 5px 15px;
+    text-align: center;
+}
+
+.button_change{
+    padding: 10px 10px;
+    background-color: #009588;
+    border-radius: 5px;
+    color: white;
+    margin: auto 10px;
+    cursor: pointer;
+
+}
+
+.button_agree{
+    padding: 10px 10px;
+    background-color: #009588;
+    border-radius: 5px;
+    color: white;
+    margin: auto 10px;
+    cursor: pointer;
+}
+
+.button_delete{
+    padding: 10px 10px;
+    background-color: #b02d36;
+    border-radius: 5px;
+    color: white;
+    margin: auto 10px;
+    cursor: pointer;
+}
+
+.button_no{
+    padding: 10px 10px;
+    background-color: #a5a8a4;
+    border-radius: 5px;
+    color: white;
+    margin: auto 10px;
+    cursor: pointer;
+}
+
+.button_refuse{
+    padding: 10px 10px;
+    background-color: #b02d36;
+    border-radius: 5px;
+    color: white;
+    margin: auto 10px;
+    cursor: pointer;
+}
+
+
+.paging {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+#paging_last {
+    background-color: #009588;
+    padding: 15px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#paging_next {
+    background-color: #4888db;
+    padding: 15px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#page_num {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#page_num a {
+    margin: 0 10px;
+    font-size: 15px;
+}

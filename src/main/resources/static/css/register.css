@@ -1,0 +1,67 @@
+.layui-tab-brief>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after {
+    border-bottom-color: #00aff8!important;
+}
+.layui-tab-brief>.layui-tab-title .layui-this {
+    color:#00aff8!important;
+}
+#border{
+    border:1px solid white;
+    background-color: white;
+    width:400px;
+    margin:auto;
+    margin-top:150px;
+    margin-bottom:150px;
+    color:#b2c6cd;
+    border-radius: 5px;
+}
+.layui-tab-title,#content{
+    width:300px!important;
+    margin:auto!important;
+}
+.layui-tab-title li {
+    padding: 0 !important;
+}
+.blocking{
+    width:289px;
+    height:30px!important;
+    margin-bottom: 10px!important;
+    padding-left:10px;
+    border-radius: 5px;
+    border:1px solid #b2c6cd;
+    font-size:12px;
+}
+.blocking:focus{
+    border-style:solid;
+    border-color: #03a9f4;
+    box-shadow:none;
+}
+.right{
+    float:right!important;
+    color:#b2c6cd;
+    padding-right:10px;
+}
+.fa{
+    padding:20px;
+    font-size: 25px !important;
+}
+.fa-qq:hover{
+    color:#00aff8;
+}
+.fa-weixin:hover{
+    color:#38D03D;
+}
+.fa-weibo:hover{
+    color:#F2473F;
+}
+.vertical{
+    height:30px;
+    vertical-align: top;
+    display: inline-block;
+}
+#checkbox1{
+    position:relative;
+    top:4px;
+}
+.check{
+    width: 140px !important;
+}
