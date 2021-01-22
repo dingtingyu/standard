@@ -14,7 +14,7 @@ public class LoginServerIMpl implements LoginServer {
     LoginMapper loginMapper;
 
     @Override
-    public IdTable selectUserById(int userId) {
-        return loginMapper.selectUser(userId);
+    public IdTable selectUserByName(String userName) {
+        return loginMapper.selectUser(userName);
     }
 }

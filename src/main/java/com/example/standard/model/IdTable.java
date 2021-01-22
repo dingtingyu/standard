@@ -9,6 +9,12 @@ public class IdTable {
 
     int id;
 
+    String password;
+
+    int grade;
+
+    String name;
+
     public int getId() {
         return id;
     }
@@ -41,8 +47,6 @@ public class IdTable {
         this.name = name;
     }
 
-    String password;
-    int grade;
-    String name;
+
 
 }

@@ -27,10 +27,10 @@ public class LoginController {
 
     @ResponseBody
     @RequestMapping(value = "/loginSubmit",method = RequestMethod.POST)
-    public JSONObject loginSubmit(HttpServletRequest request, HttpServletResponse response, String userId, String userPass) throws IOException {
-        System.out.println("登录:"+userId+userPass);
+    public JSONObject loginSubmit(HttpServletRequest request, HttpServletResponse response, String userName, String userPass) throws IOException {
+        System.out.println("登录:"+userName+userPass);
         JSONObject map = new JSONObject();
-        IdTable user = loginServer.selectUserById(Integer.valueOf(userId));
+        IdTable user = loginServer.selectUserByName(String.valueOf(userName));
         if(userPass.equals(user.getPassword())){
             request.getSession().setAttribute("userName",user.getName());
             map.put("name",user.getName());

@@ -9,109 +9,80 @@
     <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.css">
     <script src="../static/js/jquery-3.5.1.min.js"></script>
     <script src="../static/js/evaluate.js"></script>
-
-<!--<link rel="stylesheet" href="../static/css/standard.css">-->
-
+    <link rel="stylesheet" href="../static/css/evaluate.css">
 </head>
 <body>
-
-<!-- 未实现，暂隐藏 -->
 <!--<div class="waiting_img"><i class="fa fa-spinner fa-pulse fa-5x"></i></div>-->
 
-<!--<div class="table_nav">-->
-<!--    <div class="table_nav_left">-->
-<!--        <ul class="table_nav_ul">-->
-<!--            <li id="li_form_add_evaluate"><i class="fa fa-plus-square fa-lg"></i><a>添加</a></li>-->
-<!--            <li id="li_form_import_work_order"><i class="fa fa-clipboard fa-lg"></i><a>导入</a></li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--    <div class="table_nav_right">-->
-<!--        <input type="text" class="table_nav_input" placeholder="搜索">-->
-<!--        <ul class="table_nav_ul">-->
-<!--            <li><i class="fa fa-print fa-lg"></i><a></a></li>-->
-<!--            <li><i class="fa fa-exclamation-circle fa-lg"></i><a></a></li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</div>-->
-<!--endregion-->
+<div class="table_nav">
+    <div class="table_nav_left">
+        <ul class="table_nav_ul">
+            <li id="li_form_add_evaluate"><i class="fa fa-plus-square fa-lg"></i><a>添加</a></li>
+            <!--            <li id="li_form_import_work_order"><i class="fa fa-clipboard fa-lg"></i><a>导入</a></li>-->
+        </ul>
+    </div>
+
+    <div class="table_nav_right">
+        <input type="text" class="table_nav_input" id="devicename" placeholder="请输入设备名称">
+        <button type="button" id="selectbyname" style="margin-left: 20px;border: 1px solid #ccd;background-color: #009588;color: white" >查找</button>
+        <!--        <img src="../static/img/搜索.png" alt="">-->
+        <!--        <ul class="table_nav_ul">-->
+        <!--            <li><i class="fa fa-print fa-lg"></i><a></a></li>-->
+        <!--            <li><i class="fa fa-exclamation-circle fa-lg"></i><a></a></li>-->
+        <!--        </ul>-->
+    </div>
+</div>
 
 <table class="table">
     <thead id="thead">
     <tr>
         <th>#</th>
+        <th>设备名称</th>
+        <th>设备位置</th>
         <th>设备编号</th>
-        <th>评价人员编号</th>
-        <th>检查项目编号</th>
-        <th>检查等级</th>
-        <th>评估模型编号</th>
-        <th>评价日期</th>
-        <th>评价结果</th>
+        <th>问题类型</th>
+        <th>问题描述</th>
+        <th>整改建议</th>
         <th>备注</th>
         <th>操作</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>10001</td>
-        <td>10001</td>
-        <td>SdA1</td>
-        <td>A</td>
-        <td>101</td>
-        <td>2020-12-12</td>
-        <td>Y</td>
-        <td>无</td>
-        <td><a class='button_change'>修改</a><a class='button_delete'>删除</a></td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>10002</td>
-        <td>10001</td>
-        <td>SdA2</td>
-        <td>A</td>
-        <td>102</td>
-        <td>2020-12-12</td>
-        <td>Y</td>
-        <td>无</td>
-        <td><a class='button_change'>修改</a><a class='button_delete'>删除</a></td>
     </tr>
     </thead>
     <tbody id="tbody"></tbody>
 </table>
+
 
 <div class="form" id="form_evaluate">
     <div class="form_title">
         <span>添加评价结果:</span>
     </div>
     <div class="form_group">
-        <label for="evaluate_eId">设备编号</label>
-        <input type="text" id="evaluate_eId">
+        <label for="evaluate_name">设备名称</label>
+        <input type="text" id="evaluate_name">
     </div>
     <div class="form_group">
-        <label for="evaluate_wId">评价人员编号</label>
-        <input type="text" id="evaluate_wId">
+        <label for="evaluate_loc">设备位置</label>
+        <input type="text" id="evaluate_loc">
     </div>
     <div class="form_group">
-        <label for="evaluate_gbId">检查项目编号</label>
-        <input type="text" id="evaluate_gbId">
+        <label for="evaluate_Id">设备编号</label>
+        <input type="text" id="evaluate_Id">
     </div>
     <div class="form_group">
-        <label for="evaluate_grade">检查等级</label>
-        <input type="text" id="evaluate_grade">
+        <label for="evaluate_type">问题类型</label>
+        <input type="text" id="evaluate_type">
     </div>
     <div class="form_group">
-        <label for="evaluate_mId">评估模型编号</label>
-        <input type="text" id="evaluate_mId">
+        <label for="evaluate_dis">问题描述</label>
+        <input type="text" id="evaluate_dis">
     </div>
     <div class="form_group">
-        <label for="evaluate_date">评价日期</label>
-        <input type="text" id="evaluate_date">
+        <label for="evaluate_sug">整改建议</label>
+        <input type="text" id="evaluate_sug">
     </div>
+
     <div class="form_group">
-        <label for="evaluate_result">评价结果</label>
-        <input type="text" id="evaluate_result">
-    </div>
-    <div class="form_group">
-        <label for="evaluate_comment">备注</label>
-        <input type="text" id="evaluate_comment">
+        <label for="evaluate_re">备注</label>
+        <input type="text" id="evaluate_re">
     </div>
     <div class="button_group">
         <input type="button" value="更改" class="button_bottom_change">
@@ -119,7 +90,6 @@
         <input type="button" value="取消" class="button_bottom_cancel">
     </div>
 </div>
-
 
 
 </body>

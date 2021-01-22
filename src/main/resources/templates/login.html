@@ -12,14 +12,14 @@
     <script>
         $(function () {
             $("#button_login").click(function () {
-                let userId = $("#userId").val();
+                let userName = $("#userName").val();
                 let userPass = $("#userPass").val();
-                console.log("userId:"+userId);
+                console.log("userName:"+userName);
                 console.log("userPass"+userPass);
                 $.ajax({
                     type: "post",
                     url: "/loginSubmit",
-                    data:{userId:userId,userPass:userPass},
+                    data:{userName:userName,userPass:userPass},
                     dataType:'json',
                     success:function (data) {
                         if(data.result=="success"){
@@ -63,12 +63,12 @@
         <li class="layui-this"><strong>登录</strong></li>
     </ul>
     <div class="layui-tab-content" id="content">
-        <input class="blocking" id="userId" placeholder="账号" type="text"/>
+        <input class="blocking" id="userName" placeholder="用户名" type="text"/>
         <div class="icon">
             <i id="icon_error" class="fa fa-wifi fa-stack-1x" style="color: red;"></i>
         </div>
-        <input class="blocking" placeholder="用户名" type="text"/>
-        <br/>
+    <!--    <input class="blocking" placeholder="用户名" type="text"/>
+        <br/>-->
         <input class="blocking" id="userPass"  type="password" placeholder="密码"/>
         <div class="icon">
             <i id="icon_wrong" class="fa fa-exclamation-circle" style="color: red;"></i>

@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Select;
 
 public interface LoginMapper {
 
-    @Select("select * from tb.idtable where id = #{userId}")
-    public IdTable selectUser(int userId);
+    @Select("select * from tb.idtable where name = #{userName}")
+    public IdTable selectUser(String userName);
 
 }

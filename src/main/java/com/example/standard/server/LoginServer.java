@@ -7,6 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface LoginServer {
 
-    public IdTable selectUserById(int userId);
+    public IdTable selectUserByName(String userName);
 
 }
