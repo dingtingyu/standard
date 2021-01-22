@@ -40,7 +40,7 @@ $(function () {
                 htmlStr += "<td>" + data[i].problem_types + "</td>";
                 htmlStr += "<td>" + data[i].problem_description + "</td>";
                 htmlStr += "<td>" + data[i].suggestion + "</td>";
-                htmlStr += "<td>" + data[i].remark + "</td>";
+
                 //htmlStr += "<td><img src='"+data[i].picture+"' alt=''></td>";
                 //htmlStr += "<td>" + data[i].picture + "</td>";
                 htmlStr += "<td><a class='button_change'>修改</a><a class='button_delete'>删除</a></td>>"
@@ -65,21 +65,21 @@ $(function () {
         let problem_types = $("#evaluate_type").val();
         let problem_description = $("#evaluate_dis").val();
         let suggestion = $("#evaluate_sug").val();
-        let remark = $("#evaluate_re").val();
+
         $.ajax({
             type: "post",
             url: "http://192.168.2.171:8282/addknowledegeBase",
             // url:"",
             dataType: "json",
-            data: {devicename:devicename,location:location,device_id:device_id,problem_types:problem_types,problem_description:problem_description,suggestion:suggestion,remark:remark},
+            data: {devicename:devicename,location:location,device_id:device_id,problem_types:problem_types,problem_description:problem_description,suggestion:suggestion},
             success: function () {
                 $("#form_evaluate").hide();
                 alert("添加成功！");
-                window.location.href="evaluate.html";
+                window.location.href="index";
             },error:function () {
                 $("#form_evaluate").hide();
                 alert("添加成功！");
-                window.location.href="evaluate.html";
+                window.location.href="index";
             }
         });
     }
@@ -104,7 +104,7 @@ $(function () {
             success: function (data) {
                 if(data.length === 0){
                     alert("无此类信息！");
-                    window.location.href="evaluate.html";
+                    window.location.href="index";
                 }
                 else {
                 alert("查询成功");
@@ -121,7 +121,7 @@ $(function () {
                     htmlStr += "<td>" + data[i].problem_types + "</td>";
                     htmlStr += "<td>" + data[i].problem_description + "</td>";
                     htmlStr += "<td>" + data[i].suggestion + "</td>";
-                    htmlStr += "<td>" + data[i].remark + "</td>";
+
                     htmlStr += "<td><a class='button_change'>修改</a><a class='button_delete'>删除</a></td>>"
                     htmlStr += "</tr>";
                 }

@@ -10,7 +10,7 @@ public interface KnowledgeBaseMapper {
     @Select("select * from device.knowledge_base")
     public List<KnowledgeBase> getAllKnowledgeBase();
    // devicename:devicename,location:location,device_id:device_id,problem_types:problem_types,problem_description:problem_description,suggestion:suggestion,picture:picture
-    @Insert("insert into device.knowledge_base values(#{devicename},#{location},#{device_id},#{problem_types},#{problem_description},#{suggestion},#{remark})")
+    @Insert("insert into device.knowledge_base values(#{devicename},#{location},#{device_id},#{problem_types},#{problem_description},#{suggestion}")
     public void addKnowledgeBase(KnowledgeBase knowledgeBase);
 
     @Select("select * from device.knowledge_base where devicename=#{devicename}")

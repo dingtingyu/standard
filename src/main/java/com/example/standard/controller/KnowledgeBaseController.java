@@ -37,11 +37,10 @@ public class KnowledgeBaseController {
             String device_id,
             String problem_types,
             String problem_description,
-            String suggestion,
-            String remark) throws ParseException {
-        System.out.println(devicename+location+device_id+problem_types+problem_description+suggestion+remark);
+            String suggestion) throws ParseException {
+        System.out.println(devicename+location+device_id+problem_types+problem_description+suggestion);
         KnowledgeBase knowledgeBase;
-        knowledgeBase = new KnowledgeBase(devicename, location, device_id, problem_types, problem_description, suggestion, remark);
+        knowledgeBase = new KnowledgeBase(devicename, location, device_id, problem_types, problem_description, suggestion);
 
         knowledegeBaseServer.addKnowledgeBase(knowledgeBase);
     }

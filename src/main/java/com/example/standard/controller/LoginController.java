@@ -2,7 +2,10 @@ package com.example.standard.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.standard.model.IdTable;
+import com.example.standard.model.Journal;
+import com.example.standard.server.JournalServer;
 import com.example.standard.server.LoginServer;
+import com.example.standard.util.IpUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,12 +16,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
 public class LoginController {
 
     @Autowired
     LoginServer loginServer;
+
+    @Autowired
+    JournalServer journalServer;
 
     @RequestMapping("/login")
     public String login(){
@@ -41,6 +49,15 @@ public class LoginController {
             session.setAttribute("grade",user.getGrade());
             session.setMaxInactiveInterval(600);
             System.out.println("登录成功："+user);
+
+            //添加日志内容（登录）
+            Date day=new Date();
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            System.out.println(df.format(day));
+            String ipAddress = IpUtil.getIpAddr(request);
+            Journal journal;
+            journal  = new Journal(0,user.getName(),ipAddress, day,"登录");
+            journalServer.addJournal(journal);
             return map;
         }else{
             map.put("result","wrong");
