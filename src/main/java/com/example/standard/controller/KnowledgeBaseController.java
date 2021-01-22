@@ -1,6 +1,7 @@
 package com.example.standard.controller;
 
 import com.example.standard.model.KnowledgeBase;
+
 import com.example.standard.server.KnowledegeBaseServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +27,7 @@ public class KnowledgeBaseController {
     }
 
     /**
-     * 添加
+     * 添加评价知识库
      * @throws ParseException
      */
     @ResponseBody
@@ -45,6 +46,7 @@ public class KnowledgeBaseController {
         knowledegeBaseServer.addKnowledgeBase(knowledgeBase);
     }
 
+/*查询*/
     @ResponseBody
     @CrossOrigin
     @RequestMapping("/knowledegeBasebyname")

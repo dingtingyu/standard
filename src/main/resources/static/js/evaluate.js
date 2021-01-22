@@ -21,7 +21,7 @@ $(function () {
 
     $.ajax({
         type: "post",
-        url: "http://192.168.1.108:9090/allknowledegeBase",
+        url: "http://192.168.2.171:8282/allknowledegeBase",
         // url:"",
         dataType: "json",
 
@@ -68,7 +68,7 @@ $(function () {
         let remark = $("#evaluate_re").val();
         $.ajax({
             type: "post",
-            url: "http://192.168.1.108:9090/addknowledegeBase",
+            url: "http://192.168.2.171:8282/addknowledegeBase",
             // url:"",
             dataType: "json",
             data: {devicename:devicename,location:location,device_id:device_id,problem_types:problem_types,problem_description:problem_description,suggestion:suggestion,remark:remark},
@@ -96,7 +96,7 @@ $(function () {
         }
         else $.ajax({
             type: "post",
-            url: "http://192.168.1.108:9090/knowledegeBasebyname",
+            url: "http://192.168.2.171:8282/knowledegeBasebyname",
             // url:"",
             dataType: "json",
             data: {"devicename":nameValue},
@@ -107,27 +107,27 @@ $(function () {
                     window.location.href="evaluate.html";
                 }
                 else {
-                    alert("查询成功");
-                    console.log(data);
-                    $("#tbody").empty();
-                    let htmlStr = "";
-                    for (let i = 0; i < data.length; i++) {
-                        // htmlStr = "";
-                        htmlStr += "<tr>";
-                        htmlStr += "<td>" + (i + 1) + "</td>td>";
-                        htmlStr += "<td>" + data[i].devicename + "</td>";
-                        htmlStr += "<td>" + data[i].location + "</td>";
-                        htmlStr += "<td>" + data[i].device_id + "</td>";
-                        htmlStr += "<td>" + data[i].problem_types + "</td>";
-                        htmlStr += "<td>" + data[i].problem_description + "</td>";
-                        htmlStr += "<td>" + data[i].suggestion + "</td>";
-                        htmlStr += "<td>" + data[i].remark + "</td>";
-                        htmlStr += "<td><a class='button_change'>修改</a><a class='button_delete'>删除</a></td>>"
-                        htmlStr += "</tr>";
-                    }
-                    $("#tbody").append(htmlStr);
+                alert("查询成功");
+                console.log(data);
+                $("#tbody").empty();
+                let htmlStr = "";
+                for (let i = 0; i < data.length; i++) {
+                    // htmlStr = "";
+                    htmlStr += "<tr>";
+                    htmlStr += "<td>" + (i + 1) + "</td>td>";
+                    htmlStr += "<td>" + data[i].devicename + "</td>";
+                    htmlStr += "<td>" + data[i].location + "</td>";
+                    htmlStr += "<td>" + data[i].device_id + "</td>";
+                    htmlStr += "<td>" + data[i].problem_types + "</td>";
+                    htmlStr += "<td>" + data[i].problem_description + "</td>";
+                    htmlStr += "<td>" + data[i].suggestion + "</td>";
+                    htmlStr += "<td>" + data[i].remark + "</td>";
+                    htmlStr += "<td><a class='button_change'>修改</a><a class='button_delete'>删除</a></td>>"
+                    htmlStr += "</tr>";
                 }
-            },
+                $("#tbody").append(htmlStr);
+            }
+                },
             error:function(data) {
                 console.log(data);
                 // alert('er');
