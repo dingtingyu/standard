@@ -14,7 +14,7 @@ $(function () {
         let htmlStr = "";
         for (let i = 0; i < data.length; i++) {
             htmlStr += "<tr>";
-            htmlStr += "<td>" + (i + 1) + "</td>td>";
+            htmlStr += "<td>" + (i + 1) + "</td>";
             htmlStr += "<td>" + data[i].username + "</td>";
             htmlStr += "<td>" + data[i].ipAddress + "</td>";
             htmlStr += "<td>" + data[i].date + "</td>";
@@ -31,9 +31,9 @@ $(function () {
 
     console.log(getdate(new Date()));
 
-    /*function rTime(date) {
+    function rTime(date) {
         var json_date = new Date(date).toJSON();
         return new Date(new Date(json_date) + 8 * 3600 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
-    }*/
+    }
 
 });
