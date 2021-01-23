@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -101,7 +101,7 @@
                 </div>
                 <div class="head_user">
                     <img class="avatar" src="../static/img/suolong.jpg" alt="avatar">
-                    <span>管理员</span>
+                    <span th:text="${session.userName}"></span>
                 </div>
                 <span id="person_msg_button" class="arrow-bottom"></span>
                 <div id="head_user_choose_box" class="head_user_choose_box">

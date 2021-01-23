@@ -36,17 +36,20 @@ public class LoginController {
     @ResponseBody
     @RequestMapping(value = "/loginSubmit",method = RequestMethod.POST)
     public JSONObject loginSubmit(HttpServletRequest request, HttpServletResponse response, String userName, String userPass) throws IOException {
+        //登录
         System.out.println("登录:"+userName+userPass);
         JSONObject map = new JSONObject();
-        IdTable user = loginServer.selectUserByName(String.valueOf(userName));
+        IdTable user = loginServer.selectUserByName(userName);
         if(userPass.equals(user.getPassword())){
             request.getSession().setAttribute("userName",user.getName());
             map.put("name",user.getName());
             map.put("result","success");
             map.put("grade",String.valueOf(user.getGrade()));
             HttpSession session = request.getSession();
+            session.setAttribute("user",user);
             session.setAttribute("userName",user.getName());
             session.setAttribute("grade",user.getGrade());
+
             session.setMaxInactiveInterval(600);
             System.out.println("登录成功："+user);
 
