@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-//@AllArgsConstructor
+@AllArgsConstructor
 public class KnowledgeBase {
     String devicename;
     String location;
@@ -67,13 +67,5 @@ public class KnowledgeBase {
     String suggestion;
 //    String remark;
 
-    public KnowledgeBase(String devicename, String location, String device_id, String problem_types, String problem_description, String suggestion) {
-        this.devicename = devicename;
-        this.location = location;
-        this.device_id = device_id;
-        this.problem_types = problem_types;
-        this.problem_description = problem_description;
-        this.suggestion = suggestion;
-//        this.remark = remark;
-    }
+
 }

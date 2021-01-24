@@ -8,6 +8,7 @@ import com.example.standard.server.LoginServer;
 import com.example.standard.util.IpUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -36,17 +37,22 @@ public class LoginController {
     @ResponseBody
     @RequestMapping(value = "/loginSubmit",method = RequestMethod.POST)
     public JSONObject loginSubmit(HttpServletRequest request, HttpServletResponse response, String userName, String userPass) throws IOException {
+        //登录
         System.out.println("登录:"+userName+userPass);
         JSONObject map = new JSONObject();
-        IdTable user = loginServer.selectUserByName(String.valueOf(userName));
+        IdTable user = loginServer.selectUserByName(userName);
+
         if(userPass.equals(user.getPassword())){
             request.getSession().setAttribute("userName",user.getName());
             map.put("name",user.getName());
             map.put("result","success");
             map.put("grade",String.valueOf(user.getGrade()));
             HttpSession session = request.getSession();
+            session.setAttribute("user",user);
             session.setAttribute("userName",user.getName());
             session.setAttribute("grade",user.getGrade());
+            session.setAttribute("id",user.getId());
+            session.setAttribute("password",user.getPassword());
             session.setMaxInactiveInterval(600);
             System.out.println("登录成功："+user);
 
@@ -55,8 +61,8 @@ public class LoginController {
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             System.out.println(df.format(day));
             String ipAddress = IpUtil.getIpAddr(request);
-            Journal journal;
-            journal  = new Journal(0,user.getName(),ipAddress, day,"登录");
+            System.out.println(ipAddress);
+            Journal journal  = new Journal(0,user.getName(),ipAddress, day,"登录");
             journalServer.addJournal(journal);
             return map;
         }else{
@@ -73,4 +79,13 @@ public class LoginController {
         session.removeAttribute("grade");
     }
 
+
+    @PostMapping("/changepassword")
+    public String changePsw(String psw_new,int userId){
+        this.loginServer.updatePassword(psw_new,userId);
+
+
+
+        return "redirect:login";
+    }
 }

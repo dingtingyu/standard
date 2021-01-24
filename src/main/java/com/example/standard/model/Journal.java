@@ -1,12 +1,12 @@
 package com.example.standard.model;
 
+import jdk.nashorn.internal.objects.annotations.Constructor;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.Date;
-
+@AllArgsConstructor
 @Data
-
 public class Journal {
 
     int id;
@@ -15,11 +15,5 @@ public class Journal {
     Date date;
     String operation;
 
-    public Journal(int id, String username, String ipAddress, Date date, String operation) {
-        this.id = id;
-        this.username = username;
-        this.ipAddress = ipAddress;
-        this.date = date;
-        this.operation = operation;
-    }
+
 }

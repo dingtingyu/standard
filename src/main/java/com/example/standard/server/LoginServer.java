@@ -8,5 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 public interface LoginServer {
 
     public IdTable selectUserByName(String userName);
+    public IdTable selectUserById(Integer userId);
+
+    public void updatePassword(String pswnew,int id);
 
 }

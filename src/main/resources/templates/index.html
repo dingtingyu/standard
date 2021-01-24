@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -29,13 +29,13 @@
 <!--                &lt;!&ndash;                <div class="menu_content" id="evaluate"><i class="fa fa-cogs fa-lg"></i><a>评价知识库</a></div>&ndash;&gt;-->
 <!--            </div>-->
 
-<!--            <div class="menu">-->
-<!--                <div class="menu_title">人员管理</div>-->
-<!--                <div class="menu_content" id="person-msg-basic"><i class="fa fa-server fa-lg"></i><a>人员基本信息管理</a></div>-->
-<!--                <div class="menu_content" id="person-msg-login"><i class="fa fa-server fa-lg"></i><a>登录信息管理</a></div>-->
-<!--                <div class="menu_content" id="check-person-msg"><i class="fa fa-cogs fa-lg"></i><a>查看个人信息</a></div>-->
-<!--                <div class="menu_content" id="change-pass"><i class="fa fa-cogs fa-lg"></i><a>修改密码</a></div>-->
-<!--            </div>-->
+            <div class="menu">
+                <div class="menu_title">人员管理</div>
+                <div class="menu_content" id="person-msg-basic"><i class="fa fa-server fa-lg"></i><a>人员基本信息管理</a></div>
+                <div class="menu_content" id="person-msg-login"><i class="fa fa-server fa-lg"></i><a>登录信息管理</a></div>
+                <div class="menu_content" id="check-person-msg"><i class="fa fa-cogs fa-lg"></i><a>查看个人信息</a></div>
+                <div class="menu_content" id="change-pass"><i class="fa fa-cogs fa-lg"></i><a>修改密码</a></div>
+            </div>
 
             <div class="menu">
                 <div class="menu_title">设备分类管理</div>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="head_user">
                     <img class="avatar" src="../static/img/suolong.jpg" alt="avatar">
-                    <span>管理员</span>
+                    <span th:text="${session.userName}"></span>
                 </div>
                 <span id="person_msg_button" class="arrow-bottom"></span>
                 <div id="head_user_choose_box" class="head_user_choose_box">
@@ -124,27 +124,32 @@
 
 <div class="form" id="form_change_user_msg">
     <span class="form_title">修改信息</span>
+    <form th:action="@{/changepassword}" method="post">
+        <input type="hidden" th:value="${session.id}" name="userId">
+        <input type="hidden" th:value="${session.password}" id="passwore">
     <div class="form_group">
         <label>name:</label>
         <input id="input_user_name" type="text" disabled="disabled">
     </div>
     <div class="form_group">
         <label>原密码:</label>
-        <input type="password">
+        <input id="psw_now" name="psw_now" type="password">
     </div>
     <div class="form_group">
         <label>新密码:</label>
-        <input type="password">
+        <input id="psw_new" name="psw_new" type="password">
     </div>
-    <div class="form_group">
+    <!--<div class="form_group">
         <lable>重复新密码：</lable>
-        <input type="password">
-    </div>
+        <input id="psw_new_again"  name="psw_new_again" type="password">
+    </div>-->
     <div class="button_group">
-        <input id="change_user_msg" class="button_bottom_change" type="button" value="修改">
+        <input id="change_user_msg" class="button_bottom_change" type="submit" value="修改">
         <input id="cancel_change_user_msg" class="button_bottom_cancel" type="button" value="取消">
     </div>
+    </form>
 </div>
+
 
 </body>
 <script src="../static/js/jquery-3.5.1.min.js"></script>

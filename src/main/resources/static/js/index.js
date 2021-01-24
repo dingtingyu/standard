@@ -89,17 +89,26 @@ $(function () {
     });
 
     $("#form_change_user_msg").hide();
-
+//修改用户信息
     $("#button_change_personal_msg").click(function () {
         console.log("session:" + sessionStorage.getItem("userName"));
         $("#input_user_name").attr('value', sessionStorage.getItem('userName'));
         $("#form_change_user_msg").show();
     });
 
+    $("#change_user_msg").click(function () {
+        $("#form_change_user_msg").hide();
+        /*if($(user.getpass)$("#psw_now").val()){
+
+        }*/
+        console.log("修改信息")
+    })
     $("#cancel_change_user_msg").click(function () {
         $("#form_change_user_msg").hide();
         console.log("表格取消");
     });
+
+
 
     function replaceData(data) {
         let htmlStr = "";
@@ -118,5 +127,13 @@ $(function () {
         }
         $("#tbody").html(htmlStr);
     }
-
 });
+$("#psw_now").blur(function () {
+
+     if ($("#psw_now").val()!=$("#passwore").val()) {
+         alert("与原密码不符");
+
+     }
+});
+
+

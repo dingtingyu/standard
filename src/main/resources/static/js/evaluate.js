@@ -20,8 +20,8 @@ $(function () {
 
 
     $.ajax({
-        type: "post",
-        url: "http://192.168.2.171:8282/allknowledegeBase",
+        type: "get",
+        url: "/allknowledegeBase",
         // url:"",
         dataType: "json",
 
@@ -67,8 +67,8 @@ $(function () {
         let suggestion = $("#evaluate_sug").val();
 
         $.ajax({
-            type: "post",
-            url: "http://192.168.2.171:8282/addknowledegeBase",
+            type: "POST",
+            url: "/addknowledegeBase",
             // url:"",
             dataType: "json",
             data: {devicename:devicename,location:location,device_id:device_id,problem_types:problem_types,problem_description:problem_description,suggestion:suggestion},
@@ -92,11 +92,11 @@ $(function () {
         var nameValue=$("#devicename").val();
         if(nameValue===''){
             alert("请输入设备名称！");
-            window.location.href="evaluate.html";
+            window.location.href="index";
         }
         else $.ajax({
-            type: "post",
-            url: "http://192.168.2.171:8282/knowledegeBasebyname",
+            type: "get",
+            url: "/knowledegeBasebyname",
             // url:"",
             dataType: "json",
             data: {"devicename":nameValue},
