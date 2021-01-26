@@ -2,6 +2,8 @@ $(function () {
 
     $("#form_evaluate").hide();
 
+    let operation = "<td><a class='button_change'>修改</a><a class='button_delete'>删除</a></td>";
+
     $("#li_form_add_evaluate").click(function () {
         $(".button_bottom_change").hide();
         $(".button_bottom_add").show();
@@ -58,31 +60,6 @@ $(function () {
             //window.location.href="allList.html";
         }
     });
-    function addevaluate(){
-        let devicename = $("#evaluate_name").val();
-        let location = $("#evaluate_loc").val();
-        let device_id = $("#evaluate_Id").val();
-        let problem_types = $("#evaluate_type").val();
-        let problem_description = $("#evaluate_dis").val();
-        let suggestion = $("#evaluate_sug").val();
-
-        $.ajax({
-            type: "POST",
-            url: "/addknowledegeBase",
-            // url:"",
-            dataType: "json",
-            data: {devicename:devicename,location:location,device_id:device_id,problem_types:problem_types,problem_description:problem_description,suggestion:suggestion},
-            success: function () {
-                $("#form_evaluate").hide();
-                alert("添加成功！");
-                window.location.href="index";
-            },error:function () {
-                $("#form_evaluate").hide();
-                alert("添加成功！");
-                window.location.href="index";
-            }
-        });
-    }
 
     $("#selectbyname").click(function () {
         selectbyname();
@@ -159,4 +136,28 @@ $(function () {
     $("#tbody").on("click",".button_delete",function (){
         deleteFault($(this));
     });
+
+    $("#tbody").on("click",".button_change",function () {
+    let knowledgebase = $(this).parents("tr").children();
+    let devicename = knowledgebase.eq(1).html();
+    let location = knowledgebase.eq(2).html();
+    let device_id = knowledgebase.eq(3).html();
+    let problem_types = knowledgebase.eq(4).html();
+    let problem_description = knowledgebase.eq(5).html();
+    let suggestion = knowledgebase.eq(6).html();
+    $("#knowledgebase_devicename").val(devicename);
+    $("#knowledgebase_location").val(location);
+    $("#knowledgebase_device_id").val(device_id);
+    $("#knowledgebase_problem_types").val(problem_types);
+    $("#knowledgebase_problem_description").val(problem_description);
+    $("#knowledgebase_suggestion").val(suggestion);
+    $(".button_bottom_change").show();
+    $(".button_bottom_add").hide();
+    $("#form_knowledgebase").show();
+    })
+});
+
+$(".button_bottom_cancel").click(function () {
+    $("#form_standard").hide();
+    console.log("表格取消");
 });

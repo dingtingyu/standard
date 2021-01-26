@@ -13,4 +13,5 @@ public interface KnowledegeBaseServer {
     public List<KnowledgeBase> getKnowledgeBaseByName(String devicename);
     //public KnowledgeBase addKnowledgeBase(KnowledgeBase knowledgeBase);
     public void deleteKnowledge(String deviceId);
+    public void updateknowledgebase(String devicename,String location,String device_id,String problem_types,String problem_description,String suggestion,String remark);
 }

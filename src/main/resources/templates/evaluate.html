@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>evaluate</title>
@@ -55,29 +55,30 @@
     <div class="form_title">
         <span>添加评价结果:</span>
     </div>
+    <form th:action="@{/updateknowledgebase}" method="post">
     <div class="form_group">
-        <label for="evaluate_name">设备名称</label>
-        <input type="text" id="evaluate_name">
+        <label for="knowledgebase_devicename">设备名称</label>
+        <input type="text" id="knowledgebase_devicename" name="devicename" readonly="readonly">
     </div>
     <div class="form_group">
-        <label for="evaluate_loc">设备位置</label>
-        <input type="text" id="evaluate_loc">
+        <label for="knowledgebase_location">设备位置</label>
+        <input type="text" id="knowledgebase_location" name="location">
     </div>
     <div class="form_group">
-        <label for="evaluate_Id">设备编号</label>
-        <input type="text" id="evaluate_Id">
+        <label for="knowledgebase_device_id">设备编号</label>
+        <input type="text" id="knowledgebase_device_id" name="device_id">
     </div>
     <div class="form_group">
-        <label for="evaluate_type">问题类型</label>
-        <input type="text" id="evaluate_type">
+        <label for="knowledgebase_problem_types">问题类型</label>
+        <input type="text" id="knowledgebase_problem_types" name="problem_types">
     </div>
     <div class="form_group">
-        <label for="evaluate_dis">问题描述</label>
-        <input type="text" id="evaluate_dis">
+        <label for="knowledgebase_problem_description">问题描述</label>
+        <input type="text" id="knowledgebase_problem_description" name="problem_description">
     </div>
     <div class="form_group">
-        <label for="evaluate_sug">整改建议</label>
-        <input type="text" id="evaluate_sug">
+        <label for="knowledgebase_suggestion">整改建议</label>
+        <input type="text" id="knowledgebase_suggestion" name="suggestion">
     </div>
 
 <!--    <div class="form_group">-->
@@ -85,10 +86,11 @@
 <!--        <input type="text" id="evaluate_re">-->
 <!--    </div>-->
     <div class="button_group">
-        <input type="button" value="更改" class="button_bottom_change">
-        <input type="button" value="添加" class="button_bottom_add">
+        <input type="submit" value="更改" name="updateknowledgebase" class="button_bottom_change">
+
         <input type="button" value="取消" class="button_bottom_cancel">
     </div>
+    </form>
 </div>
 
 

@@ -29,4 +29,9 @@ public class KnowledgeBaseServerImpl implements KnowledegeBaseServer {
     public void deleteKnowledge(String deviceId) {
         knowledgeBaseMapper.deleteKnowledge(deviceId);
     }
+
+    @Override
+    public void updateknowledgebase(String devicename,String location,String device_id,String problem_types,String problem_description,String suggestion,String remark){
+        knowledgeBaseMapper.updateknowledgebase(devicename,location,device_id,problem_types,problem_description,suggestion,remark);
+    }
 }
