@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>standard</title>
@@ -52,45 +52,47 @@
 
 <div class="form" id="form_standard">
     <div class="form_title">
-        <span>添加订单信息:</span>
+        <span>修改标准信息:</span>
     </div>
+    <form th:action="@{/updateStandard}" method="post">
     <div class="form_group">
         <label for="standard_gbId">编号</label>
-        <input type="text" id="standard_gbId">
+        <input type="text" id="standard_gbId" name="gbID" readonly="readonly">
     </div>
     <div class="form_group">
         <label for="standard_gbnum">国标序号</label>
-        <input type="text" id="standard_gbnum">
+        <input type="text" id="standard_gbnum" name="gbnum">
     </div>
     <div class="form_group">
         <label for="standard_gbsymbol">国标标识</label>
-        <input type="text" id="standard_gbsymbol">
+        <input type="text" id="standard_gbsymbol" name="gbsymbol">
     </div>
     <div class="form_group">
         <label for="standard_information">设备国标检查内容</label>
-        <input type="text" id="standard_information">
+        <input type="text" id="standard_information" name="gbinformation">
     </div>
     <div class="form_group">
         <label for="standard_gbD">gbD</label>
-        <input type="text" id="standard_gbD">
+        <input type="text" id="standard_gbD" name="gbD">
     </div>
     <div class="form_group">
         <label for="standard_gbC">gbC</label>
-        <input type="text" id="standard_gbC">
+        <input type="text" id="standard_gbC" name="gbC">
     </div>
     <div class="form_group">
         <label for="standard_gbV">gbV</label>
-        <input type="text" id="standard_gbV">
+        <input type="text" id="standard_gbV" name="gbV">
     </div>
 <!--    <div class="form_group">-->
 <!--        <label for="standard_comment">备注</label>-->
 <!--        <input type="text" id="standard_comment">-->
 <!--    </div>-->
     <div class="button_group">
-        <input type="button" value="更改" class="button_bottom_change">
-        <input type="button" value="添加" class="button_bottom_add">
+        <input type="submit" value="更改" name="updateStandard" class="button_bottom_change">
+
         <input type="button" value="取消" class="button_bottom_cancel">
     </div>
+    </form>
 </div>
 
 <script src="../static/js/standard.js"></script>

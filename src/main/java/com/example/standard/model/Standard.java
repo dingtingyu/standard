@@ -7,6 +7,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class Standard {
 
+
     String gbID;
     int gbD;
     int gbC;

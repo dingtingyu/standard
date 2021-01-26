@@ -4,12 +4,13 @@
 .layui-tab-brief>.layui-tab-title .layui-this {
     color:#00aff8!important;
 }
+
 #border{
     border:1px solid white;
     background-color: white;
     width:400px;
     margin:auto;
-    margin-top:150px;
+
     margin-bottom:150px;
     color:#b2c6cd;
     border-radius: 5px;
@@ -44,15 +45,7 @@
     padding:20px;
     font-size: 25px !important;
 }
-.fa-qq:hover{
-    color:#00aff8;
-}
-.fa-weixin:hover{
-    color:#38D03D;
-}
-.fa-weibo:hover{
-    color:#F2473F;
-}
+
 .vertical{
     height:30px;
     vertical-align: top;

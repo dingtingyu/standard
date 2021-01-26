@@ -17,4 +17,9 @@ public interface StandardMapper {
     @Delete("delete from tb.standard where gbID =#{id}")
     public void deleteStandard(String id);
 
+    @Update("update tb.standard set gbD=#{gbD},gbC=#{gbC},gbV=#{gbV},gbsymbol=#{gbsymbol},gbinformation=#{gbinformation},gbnum=#{gbnum} where gbID=#{gbID}")
+    public void updateStandard(String gbID,Integer gbD,Integer gbC,Integer gbV,String gbsymbol,String gbinformation,String gbnum);
+
+    @Select("select * from tb.standard where gbId=#{gbId}")
+    public void getStandardById(String gbId);
 }

@@ -12,4 +12,7 @@ public interface StandardServer {
 
     public void deleteStandard(String id);
 
+    public void updateStandard(String gbID,Integer gbD,Integer gbC,Integer gbV,String gbsymbol,String gbinformation,String gbnum);
+
+    public void getStandardByid(String gbId);
 }

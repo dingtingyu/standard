@@ -51,13 +51,15 @@ $(function () {
         let id = trClicked.parents("tr").children().eq(1).html();
         console.log(id);
         $.ajax({
-            type: "post",
+            type: "get",
             url: "/deleteStandard",
             // dataType: "json"
             data: {"id":id},
             success:function () {
-                $("#default").click();
+
                 alert("删除成功");
+                $("#default").click();
+                location.reload();
             },
             error:function () {
                 alert("删除失败！");
@@ -79,6 +81,7 @@ $(function () {
         let gbC = standard.eq(6).html();
         let gbV = standard.eq(7).html();
         let gbcomment = standard.eq(8).html();
+        let sid = standard.eq(9).html();
         $("#standard_gbId").val(gbID);
         $("#standard_gbnum").val(gbnum);
         $("#standard_gbsymbol").val(gbsymbol);
@@ -87,9 +90,14 @@ $(function () {
         $("#standard_gbC").val(gbC);
         $("#standard_gbV").val(gbV);
         $("#standard_comment").val(gbcomment);
+        $("#standard_comment").val(sid);
         $(".button_bottom_change").show();
         $(".button_bottom_add").hide();
         $("#form_standard").show();
     })
 
+});
+$(".button_bottom_cancel").click(function () {
+    $("#form_standard").hide();
+    console.log("表格取消");
 });

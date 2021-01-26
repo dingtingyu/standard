@@ -33,7 +33,7 @@ $(function () {
                 "            <th>安装位置号</th>\n" +
                 "            <th>设备负责人</th>\n" +
                 // "            <th>备注</th>\n" +
-                "            <th>操作</th>\n" +
+                // "            <th>操作</th>\n" +
                 "        </tr>");
             $("#tbody").html("");
             // $(this).css('background', "#009588");
@@ -122,7 +122,7 @@ $(function () {
             htmlStr += "<td>" + data[i].testcol3 + "</td>";
             htmlStr += "<td>" + data[i].testcol4 + "</td>";
             // htmlStr += "<td>" + data[i].testcol5 + "</td>";
-            htmlStr += "<td><a class='button_agree'>同意</a><a class='button_refuse'>取消</a></td>>";
+            // htmlStr += "<td><a class='button_agree'>同意</a><a class='button_refuse'>取消</a></td>>";
             htmlStr += "</tr>";
         }
         $("#tbody").html(htmlStr);

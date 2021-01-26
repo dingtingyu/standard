@@ -123,7 +123,7 @@ $(function () {
             htmlStr += "<td>" + data[i].testcol3 + "</td>";
             htmlStr += "<td>" + data[i].testcol4 + "</td>";
             // htmlStr += "<td>" + data[i].testcol5 + "</td>";
-            htmlStr += "<td><a class='button_agree'>同意</a><a class='button_refuse'>取消</a></td>>";
+            // htmlStr += "<td><a class='button_agree'>同意</a><a class='button_refuse'>取消</a></td>>";
             htmlStr += "</tr>";
         }
         $("#tbody").html(htmlStr);
