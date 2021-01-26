@@ -44,4 +44,11 @@ public class UserController {
         userServer.addLoginUser(idTable);
     }
 
+    @ResponseBody
+    @GetMapping("/deleteUser")
+    public String  deleteUser(int id){
+        userServer.deleteUser(id);
+        return "redirect:index";
+    }
+
 }

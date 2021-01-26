@@ -1,6 +1,7 @@
 package com.example.standard.mapper;
 
 import com.example.standard.model.IdTable;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
@@ -14,4 +15,6 @@ public interface UserMapper {
     @Insert("insert into tb.idtable(name,password,grade) values(#{name},#{password},#{grade})")
     public void addLoginUser(IdTable idTable);
 
+    @Delete("delete from tb.IdTable where id=#{id}")
+    public void deleteUser(int id);
 }

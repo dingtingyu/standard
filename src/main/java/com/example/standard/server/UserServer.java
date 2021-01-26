@@ -12,4 +12,6 @@ public interface UserServer {
 
     public void addLoginUser(IdTable idTable);
 
+    public void deleteUser(int id);
+
 }

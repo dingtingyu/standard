@@ -24,4 +24,9 @@ public class KnowledgeBaseServerImpl implements KnowledegeBaseServer {
 
     @Override
     public List<KnowledgeBase> getKnowledgeBaseByName(String devicename){return knowledgeBaseMapper.getKnowledgeBaseByName(devicename);}
+
+    @Override
+    public void deleteKnowledge(String deviceId) {
+        knowledgeBaseMapper.deleteKnowledge(deviceId);
+    }
 }

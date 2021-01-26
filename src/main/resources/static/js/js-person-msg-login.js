@@ -28,12 +28,12 @@ $(function () {
         let htmlStr = "";
         for (let i = 0; i < data.length; i++) {
             htmlStr += "<tr>";
-            htmlStr += "<td>" + (i + 1) + "</td>td>";
+            htmlStr += "<td>" + (i + 1) + "</td>";
             htmlStr += "<td>" + data[i].id + "</td>";
             htmlStr += "<td>" + data[i].name + "</td>";
             htmlStr += "<td>" + data[i].password + "</td>";
             htmlStr += "<td>" + data[i].grade + "</td>";
-            htmlStr += "<td><a class='button_delete'>删除</a></td>>";
+            htmlStr += "<td><a class='button_delete' id='deleteUser' name='deleteUser'>删除</a></td>>";
             htmlStr += "</tr>";
         }
         $("#tbody").html(htmlStr);
@@ -123,6 +123,28 @@ $(function () {
         }
     });
 
+    function deleteFault(trClicked){
+        let id = trClicked.parents("tr").children().eq(1).html();
+        console.log(id);
+        $.ajax({
+            type: "get",
+            url: "/deleteUser",
+            // dataType: "json"
+            data: {"id":id},
+            success:function () {
 
+                alert("删除成功");
+                $("#default").click();
+                location.reload();
+            },
+            error:function () {
+                alert("删除失败！");
+            }
+        });
+    }
+
+    $("#tbody").on("click",".button_delete",function (){
+        deleteFault($(this));
+    });
 
 });

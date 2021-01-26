@@ -65,7 +65,7 @@ public class KnowledgeBase {
     String problem_types;
     String problem_description;
     String suggestion;
-//    String remark;
+    String remark;
 
 
 }

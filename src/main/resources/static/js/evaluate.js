@@ -136,4 +136,27 @@ $(function () {
             }
         });
     }
+    function deleteFault(trClicked){
+        let id = trClicked.parents("tr").children().eq(3).html();
+        console.log(id);
+        $.ajax({
+            type: "get",
+            url: "/deleteKnowledge",
+            // dataType: "json"
+            data: {"deviceId":id},
+            success:function () {
+
+                alert("删除成功");
+                $("#default").click();
+                location.reload();
+            },
+            error:function () {
+                alert("删除失败！");
+            }
+        });
+    }
+
+    $("#tbody").on("click",".button_delete",function (){
+        deleteFault($(this));
+    });
 });

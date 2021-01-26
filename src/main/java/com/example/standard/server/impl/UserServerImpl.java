@@ -23,4 +23,9 @@ public class UserServerImpl implements UserServer {
     public void addLoginUser(IdTable idTable) {
         userMapper.addLoginUser(idTable);
     }
+
+    @Override
+    public void deleteUser(int id) {
+        userMapper.deleteUser(id);
+    }
 }

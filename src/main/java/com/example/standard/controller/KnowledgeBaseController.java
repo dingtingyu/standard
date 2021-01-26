@@ -5,10 +5,7 @@ import com.example.standard.model.KnowledgeBase;
 import com.example.standard.server.KnowledegeBaseServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.List;
@@ -37,10 +34,11 @@ public class KnowledgeBaseController {
             String device_id,
             String problem_types,
             String problem_description,
-            String suggestion) throws ParseException {
+            String suggestion, 
+            String remark) throws ParseException {
         System.out.println(devicename+location+device_id+problem_types+problem_description+suggestion);
 
-        KnowledgeBase knowledgeBase = new KnowledgeBase(devicename, location, device_id, problem_types, problem_description, suggestion);
+        KnowledgeBase knowledgeBase = new KnowledgeBase(devicename, location, device_id, problem_types, problem_description, suggestion,remark);
 
         knowledegeBaseServer.addKnowledgeBase(knowledgeBase);
     }
@@ -53,5 +51,11 @@ public class KnowledgeBaseController {
         System.out.println(devicename);
         //return knowledegeBaseServer.getKnowledgeBaseByName("防爆接线箱");
         return knowledegeBaseServer.getKnowledgeBaseByName(devicename);
+    }
+
+    @ResponseBody
+    @GetMapping("/deleteKnowledge")
+    public void deleteKnowledge(String deviceId){
+        knowledegeBaseServer.deleteKnowledge(deviceId);
     }
 }

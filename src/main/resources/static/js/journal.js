@@ -16,7 +16,7 @@ $(function () {
             htmlStr += "<tr>";
             htmlStr += "<td>" + (i + 1) + "</td>";
             htmlStr += "<td>" + data[i].username + "</td>";
-            htmlStr += "<td>" + data[i].ipAddress + "</td>";
+            // htmlStr += "<td>" + data[i].ipAddress + "</td>";
             htmlStr += "<td>" + data[i].date + "</td>";
             //htmlStr += "<td>" + "17:00:10" + "</td>";
 

@@ -29,7 +29,7 @@ $(function () {
             for (let i = 0; i < data.length; i++) {
                 // htmlStr = "";
                 htmlStr += "<tr>";
-                htmlStr += "<td>" + (i + 1) + "</td>td>";
+                htmlStr += "<td>" + (i + 1) + "</td>";
                 htmlStr += "<td>" + data[i].gbID + "</td>";
                 htmlStr += "<td>" + data[i].gbnum + "</td>";
                 htmlStr += "<td>" + data[i].gbsymbol + "</td>";

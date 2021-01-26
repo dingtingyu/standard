@@ -30,7 +30,7 @@ public class StandardController {
     }
 
     @PostMapping("/updateStandard")
-    public String  updateStandard(HttpServletRequest request ,String gbID, Integer gbD, Integer gbC, Integer gbV, String gbsymbol, String gbinformation, String gbnum){
+    public String  updateStandard(String gbID, Integer gbD, Integer gbC, Integer gbV, String gbsymbol, String gbinformation, String gbnum){
         System.out.println("gbID"+gbID);
         this.standardServer.updateStandard(gbID,gbD,gbC,gbV,gbsymbol,gbinformation,gbnum);
         return "redirect:index";
