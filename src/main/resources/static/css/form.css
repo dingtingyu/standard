@@ -86,3 +86,15 @@
     background-color: #009588;
     color: white;
 }
+
+.empty{
+    color: #ffffff00;
+}
+
+.wrong{
+    color: red;
+}
+
+.ok{
+    color: green;
+}

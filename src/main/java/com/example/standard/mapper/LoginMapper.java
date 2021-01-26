@@ -16,4 +16,5 @@ public interface LoginMapper {
     @Update("update tb.idtable set password = #{pswnew} where id = #{userId}")
     public void updatePassword(String pswnew,int userId);
 
+
 }

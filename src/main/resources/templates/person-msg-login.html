@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录信息管理</title>
+    <link rel="stylesheet" href="../static/css/form.css">
+    <link rel="stylesheet" href="../static/css/table.css">
+    <script src="../static/js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.css">
+</head>
+<body>
+
+<div id="content" style="padding: 5px">
+
+        <div class="table_nav">
+            <div class="table_nav_left">
+                <ul class="table_nav_ul">
+                    <li id="li-add-loginUser"><i class="fa fa-plus-square fa-lg"></i><a>添加用户</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    <table class="table">
+        <thead id="thead">
+        <tr>
+            <th>#</th>
+            <th>编号</th>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>等级</th>
+<!--            <th>设备负责人</th>-->
+            <!--            <th>备注</th>-->
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</div>
+
+<script src="../static/js/js-person-msg-login.js"></script>
+
+<div class="form" id="form-add-loginUser">
+    <div class="form_title">
+        <span>添加登录用户:</span>
+    </div>
+<!--    <div class="form_group">-->
+<!--        <label for="loginUser_id">id</label>-->
+<!--        <input type="text" id="loginUser_id">-->
+<!--    </div>-->
+    <div class="form_group">
+        <div><label for="loginUser_name">用户名</label> <i id="name_is_repeat" class="fa fa-check-circle" style="color: #ffffff00;"></i></div>
+<!--        exclamation-circle-->
+        <input type="text" id="loginUser_name">
+    </div>
+    <div class="form_group">
+        <label for="loginUser_pass">密码</label>
+        <input type="password" id="loginUser_pass">
+    </div>
+    <div class="form_group">
+        <div><label for="loginUser_pass2">重复密码</label> <i id="pass_is_repeat" class="fa fa-check-circle" style="color: #ffffff00;"></i></div>
+        <input type="password" id="loginUser_pass2">
+    </div>
+    <div class="form_group">
+        <label for="loginUser_grade">等级</label>
+        <input type="text" id="loginUser_grade">
+    </div>
+    <!--    <div class="form_group">-->
+    <!--        <label for="standard_gbV">备注</label>-->
+    <!--        <input type="text" id="standard_gbV">-->
+    <!--    </div>-->
+    <div class="button_group">
+        <input id="ok" type="button" value="确认" class="button_bottom_add">
+        <input id="cancel" type="button" value="取消" class="button_bottom_cancel">
+    </div>
+</div>
+
+</body>
+</html>
