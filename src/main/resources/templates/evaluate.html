@@ -50,15 +50,15 @@
     <tbody id="tbody"></tbody>
 </table>
 
-
+<!--添加评价结果-->
 <div class="form" id="form_evaluate">
     <div class="form_title">
         <span>添加评价结果:</span>
     </div>
-    <form th:action="@{/updateknowledgebase}" method="post">
+    <form th:action="@{/addknowledegeBase}" method="post">
     <div class="form_group">
         <label for="knowledgebase_devicename">设备名称</label>
-        <input type="text" id="knowledgebase_devicename" name="devicename" readonly="readonly">
+        <input type="text" id="knowledgebase_devicename" name="devicename">
     </div>
     <div class="form_group">
         <label for="knowledgebase_location">设备位置</label>
@@ -86,10 +86,55 @@
 <!--        <input type="text" id="evaluate_re">-->
 <!--    </div>-->
     <div class="button_group">
-        <input type="submit" value="更改" name="updateknowledgebase" class="button_bottom_change">
+        <input type="submit" value="添加" name="addknowledgebase" class="button_bottom_add">
 
         <input type="button" value="取消" class="button_bottom_cancel">
     </div>
+    </form>
+</div>
+
+
+<!--修改评价结果-->
+<div class="form" id="form_evaluate_update">
+    <div class="form_title">
+        <span>修改评价结果:</span>
+    </div>
+    <form th:action="@{/updateKnowledge}" method="post">
+<input type="hidden" id="kid_update" name="kid">
+        <div class="form_group">
+            <label for="knowledgebase_devicename">设备名称</label>
+            <input type="text" id="knowledgebase_devicename_update" name="devicename">
+        </div>
+        <div class="form_group">
+            <label for="knowledgebase_location">设备位置</label>
+            <input type="text" id="knowledgebase_location_update" name="location">
+        </div>
+        <div class="form_group">
+            <label for="knowledgebase_device_id">设备编号</label>
+            <input type="text" id="knowledgebase_device_id_update" name="device_id">
+        </div>
+        <div class="form_group">
+            <label for="knowledgebase_problem_types">问题类型</label>
+            <input type="text" id="knowledgebase_problem_types_update" name="problem_types">
+        </div>
+        <div class="form_group">
+            <label for="knowledgebase_problem_description">问题描述</label>
+            <input type="text" id="knowledgebase_problem_description_update" name="problem_description">
+        </div>
+        <div class="form_group">
+            <label for="knowledgebase_suggestion">整改建议</label>
+            <input type="text" id="knowledgebase_suggestion_update" name="suggestion">
+        </div>
+
+        <!--    <div class="form_group">-->
+        <!--        <label for="evaluate_re">备注</label>-->
+        <!--        <input type="text" id="evaluate_re">-->
+        <!--    </div>-->
+        <div class="button_group">
+            <input type="submit" value="修改" name="updateknowledgebase" class="button_bottom_update">
+
+            <input type="button" value="取消" class="button_bottom_cancel">
+        </div>
     </form>
 </div>
 

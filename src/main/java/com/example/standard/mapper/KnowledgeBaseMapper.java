@@ -13,7 +13,7 @@ public interface KnowledgeBaseMapper {
     public List<KnowledgeBase> getAllKnowledgeBase();
    // devicename:devicename,location:location,device_id:device_id,problem_types:problem_types,problem_description:problem_description,suggestion:suggestion,picture:picture
 
-    @Insert("insert into tb.knowledge_base values(#{devicename},#{location},#{device_id},#{problem_types},#{problem_description},#{suggestion},#{remark})")
+    @Insert("insert into tb.knowledge_base values(#{devicename},#{location},#{device_id},#{problem_types},#{problem_description},#{suggestion},#{remark}),#{kid}")
     public void addKnowledgeBase(KnowledgeBase knowledgeBase);
 
     @Select("select * from tb.knowledge_base where devicename=#{devicename}")
@@ -22,6 +22,6 @@ public interface KnowledgeBaseMapper {
     @Delete("delete from tb.knowledge_base where device_id=#{deviceId}")
     public void deleteKnowledge(String deviceId);
 
-    @Update("update tb.knowledge_base set location=#{location},device_id=#{device_id},problem_types=#{problem_types},problem_description=#{problem_description},suggestion=#{suggestion},remark=#{remark} where devicename=#{devicename}")
-    public void updateknowledgebase(String devicename,String location,String device_id,String problem_types,String problem_description,String suggestion,String remark);
+    @Update("update tb.knowledge_base set devicename=#{devicename},location=#{location},device_id=#{device_id},problem_types=#{problem_types},problem_description=#{problem_description},suggestion=#{suggestion},remark=#{remark} where kid=#{kid}")
+    public void updateknowledgebase(String devicename,String location,String device_id,String problem_types,String problem_description,String suggestion,String remark,String kid);
 }

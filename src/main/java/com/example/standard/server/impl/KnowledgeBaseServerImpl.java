@@ -31,7 +31,7 @@ public class KnowledgeBaseServerImpl implements KnowledegeBaseServer {
     }
 
     @Override
-    public void updateknowledgebase(String devicename,String location,String device_id,String problem_types,String problem_description,String suggestion,String remark){
-        knowledgeBaseMapper.updateknowledgebase(devicename,location,device_id,problem_types,problem_description,suggestion,remark);
+    public void updateknowledgebase(String devicename,String location,String device_id,String problem_types,String problem_description,String suggestion,String remark,String kid){
+        knowledgeBaseMapper.updateknowledgebase(devicename,location,device_id,problem_types,problem_description,suggestion,remark,kid);
     }
 }

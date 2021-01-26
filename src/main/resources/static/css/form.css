@@ -59,6 +59,20 @@
     color: white;
 }
 
+.button_bottom_update {
+    border: 1px solid #ccd;
+    background-color: white;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button_bottom_update:active{
+    background-color: #009588;
+    color: white;
+}
+
 .button_bottom_cancel {
     border: 1px solid #ccd;
     background-color: white;

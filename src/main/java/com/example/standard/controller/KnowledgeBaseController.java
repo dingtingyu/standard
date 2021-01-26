@@ -27,9 +27,9 @@ public class KnowledgeBaseController {
      * 添加评价知识库
      * @throws ParseException
      */
-    @ResponseBody
+
     @PostMapping("/addknowledegeBase")
-    public void knowledegeBase(String devicename,
+    public String knowledegeBase(String devicename,
             String location,
             String device_id,
             String problem_types,
@@ -41,6 +41,7 @@ public class KnowledgeBaseController {
         KnowledgeBase knowledgeBase = new KnowledgeBase(devicename, location, device_id, problem_types, problem_description, suggestion,remark);
 
         knowledegeBaseServer.addKnowledgeBase(knowledgeBase);
+    return "redirect:index";
     }
 
 /*查询*/
@@ -58,4 +59,16 @@ public class KnowledgeBaseController {
     public void deleteKnowledge(String deviceId){
         knowledegeBaseServer.deleteKnowledge(deviceId);
     }
+
+
+    @PostMapping("/updateKnowledge")
+    public String updateknowledgebase(String devicename, String location,
+                                    String device_id, String problem_types,
+                                    String problem_description,String suggestion,
+                                    String remark,String kid){
+
+        this.knowledegeBaseServer.updateknowledgebase(devicename,location,device_id,problem_types,problem_description,suggestion,remark,kid);
+        return "redirect:index";
+    }
+
 }
