@@ -80,7 +80,7 @@
     </div>
     <div class="form_group">
         <label for="loginUser_phone">电话</label>
-        <input type="text" id="loginUser_phone">
+        <input type="text" oninput = "value=value.replace(/[^\d]/g,'')" id="loginUser_phone">
     </div>
     <!--    <div class="form_group">-->
     <!--        <label for="standard_gbV">备注</label>-->

@@ -38,7 +38,7 @@ public class UserController {
 
     @ResponseBody
     @GetMapping("/addLoginUser")
-    public void addLoginUser(String name,String password,int grade,String realname,int age,int phone){
+    public void addLoginUser(String name,String password,int grade,String realname,int age,String phone){
         System.out.println("addUser"+name+password+grade);
         IdTable idTable = new IdTable(0,password,grade,name,realname,age,phone);
         userServer.addLoginUser(idTable);

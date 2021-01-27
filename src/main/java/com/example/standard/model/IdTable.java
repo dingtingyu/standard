@@ -2,9 +2,11 @@ package com.example.standard.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class IdTable {
 
     int id;
@@ -19,7 +21,8 @@ public class IdTable {
 
     int age;
 
-    int phone;
+
+    String phone;
 
     public int getAge() {
         return age;
@@ -37,11 +40,11 @@ public class IdTable {
         this.realname = realname;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
