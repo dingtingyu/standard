@@ -10,8 +10,8 @@
     background-color: white;
     width:400px;
     margin:auto;
-
-    margin-bottom:150px;
+    margin-top: 10%;
+    /*margin-bottom:150px;*/
     color:#b2c6cd;
     border-radius: 5px;
 }
@@ -23,6 +23,7 @@
     padding: 0 !important;
 }
 .blocking{
+
     width:289px;
     height:30px!important;
     margin-bottom: 10px!important;
