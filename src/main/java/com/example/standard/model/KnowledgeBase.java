@@ -67,6 +67,15 @@ public class KnowledgeBase {
     String suggestion;
     String remark;
 
+    public Integer getKid() {
+        return kid;
+    }
+
+    public void setKid(Integer kid) {
+        this.kid = kid;
+    }
+
+    Integer kid;
 
 
 }

@@ -30,15 +30,16 @@ public class KnowledgeBaseController {
 
     @PostMapping("/addknowledegeBase")
     public String knowledegeBase(String devicename,
-            String location,
-            String device_id,
-            String problem_types,
-            String problem_description,
-            String suggestion, 
-            String remark) throws ParseException {
+                                       String location,
+                                       String device_id,
+                                       String problem_types,
+                                       String problem_description,
+                                       String suggestion,
+                                       String remark,
+    Integer kid) throws ParseException {
         System.out.println(devicename+location+device_id+problem_types+problem_description+suggestion);
 
-        KnowledgeBase knowledgeBase = new KnowledgeBase(devicename, location, device_id, problem_types, problem_description, suggestion,remark);
+        KnowledgeBase knowledgeBase = new KnowledgeBase(devicename, location, device_id, problem_types, problem_description, suggestion,remark,kid);
 
         knowledegeBaseServer.addKnowledgeBase(knowledgeBase);
     return "redirect:index";
@@ -65,7 +66,8 @@ public class KnowledgeBaseController {
     public String updateknowledgebase(String devicename, String location,
                                     String device_id, String problem_types,
                                     String problem_description,String suggestion,
-                                    String remark,String kid){
+                                    String remark,Integer kid){
+        System.out.println("kid:"+kid);
 
         this.knowledegeBaseServer.updateknowledgebase(devicename,location,device_id,problem_types,problem_description,suggestion,remark,kid);
         return "redirect:index";

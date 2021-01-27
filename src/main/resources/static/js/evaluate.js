@@ -37,7 +37,7 @@ $(function () {
             for (let i = 0; i < data.length; i++) {
                 // htmlStr = "";
                 htmlStr += "<tr>";
-                htmlStr += "<td>" + (i + 1) + "</td>td>";
+                htmlStr += "<td>" + data[i].kid + "</td>";
                 htmlStr += "<td>" + data[i].devicename + "</td>";
                 htmlStr += "<td>" + data[i].location + "</td>";
                 htmlStr += "<td>" + data[i].device_id + "</td>";
@@ -70,7 +70,7 @@ $(function () {
         let problem_types = knowledgebase.eq(4).html();
         let problem_description = knowledgebase.eq(5).html();
         let suggestion = knowledgebase.eq(6).html();
-        let kid = knowledgebase.eq(7).html();
+        let kid = knowledgebase.eq(0).html();
         $("#knowledgebase_devicename_update").val(devicename);
         $("#knowledgebase_location_update").val(location);
         $("#knowledgebase_device_id_update").val(device_id);
