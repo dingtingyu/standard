@@ -15,6 +15,37 @@ public class IdTable {
 
     String name;
 
+    String realname;
+
+    int age;
+
+    int phone;
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getRealname() {
+        return realname;
+    }
+
+    public void setRealname(String realname) {
+        this.realname = realname;
+    }
+
+    public int getPhone() {
+        return phone;
+    }
+
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
+
+
     public int getId() {
         return id;
     }

@@ -33,6 +33,9 @@ $(function () {
             htmlStr += "<td>" + data[i].name + "</td>";
             htmlStr += "<td>" + data[i].password + "</td>";
             htmlStr += "<td>" + data[i].grade + "</td>";
+            htmlStr += "<td>" + data[i].realname + "</td>";
+            htmlStr += "<td>" + data[i].age + "</td>";
+            htmlStr += "<td>" + data[i].phone + "</td>";
             htmlStr += "<td><a class='button_delete' id='deleteUser' name='deleteUser'>删除</a></td>>";
             htmlStr += "</tr>";
         }
@@ -49,10 +52,13 @@ $(function () {
            let name = $("#loginUser_name").val();
            let password = $("#loginUser_pass").val();
            let grade = $("#loginUser_grade").val();
+           let realname = $("#loginUser_realname").val();
+           let age = $("#loginUser_age").val();
+           let phone = $("#loginUser_phone").val();
            $.ajax({
                url: "/addLoginUser",
                type: "get",
-               data: {name:name,password:password,grade:grade},
+               data: {name:name,password:password,grade:grade,realname:realname,age:age,phone:phone},
                success: function () {
                    console.log("添加用户成功！");
                    alert("添加用户成功!");

@@ -12,7 +12,7 @@ public interface UserMapper {
     @Select("select * from tb.idtable")
     public List<IdTable> getAllLoginUser();
 
-    @Insert("insert into tb.idtable(name,password,grade) values(#{name},#{password},#{grade})")
+    @Insert("insert into tb.idtable(name,password,grade,realname,age,phone) values(#{name},#{password},#{grade},#{realname},#{age},#{phone})")
     public void addLoginUser(IdTable idTable);
 
     @Delete("delete from tb.IdTable where id=#{id}")
