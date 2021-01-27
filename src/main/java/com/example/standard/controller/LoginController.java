@@ -52,7 +52,6 @@ public class LoginController {
             session.setAttribute("userName",user.getName());
             session.setAttribute("grade",user.getGrade());
             session.setAttribute("id",user.getId());
-            session.setAttribute("password",user.getPassword());
             session.setMaxInactiveInterval(600);
             System.out.println("登录成功："+user);
 
@@ -62,7 +61,7 @@ public class LoginController {
             System.out.println(df.format(day));
             String ipAddress = IpUtil.getIpAddr(request);
             System.out.println(ipAddress);
-            Journal journal  = new Journal(0,user.getName(),ipAddress, day,"登录");
+            Journal journal  = new Journal(0,user.getName(),ipAddress,day,"登录");
             journalServer.addJournal(journal);
             return map;
         }else{
