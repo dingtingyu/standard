@@ -143,8 +143,12 @@ $(function () {
         });
     }
 
-    $("#tbody").on("click",".button_delete",function (){
-        deleteFault($(this));
+
+        $("#tbody").on("click",".button_delete",function () {
+            var r = confirm("是否删除?");
+            if (r == true) {
+                deleteFault($(this));
+            }
+        });
     });
 
-});

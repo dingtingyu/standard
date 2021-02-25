@@ -131,7 +131,7 @@ $(".button_bottom_change_cancel").click(function () {
                     htmlStr += "<td>" + data[i].problem_description + "</td>";
                     htmlStr += "<td>" + data[i].suggestion + "</td>";
 
-                    htmlStr += "<td><a class='button_change'>修改</a><a class='button_delete'>删除</a></td>>"
+                    htmlStr += "<td><a id='button_update' class='button_change'>修改</a><a class='button_delete'>删除</a></td>>"
                     htmlStr += "</tr>";
                 }
                 $("#tbody").append(htmlStr);
@@ -167,7 +167,10 @@ $(".button_bottom_change_cancel").click(function () {
     }
 
     $("#tbody").on("click",".button_delete",function (){
-        deleteFault($(this));
+        var r = confirm("是否删除?");
+        if(r==true){
+            deleteFault($(this));
+        }
     });
 
 
