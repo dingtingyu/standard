@@ -2,9 +2,11 @@ package com.example.standard.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class IdTable {
 
     int id;
@@ -14,6 +16,38 @@ public class IdTable {
     int grade;
 
     String name;
+
+    String realname;
+
+    int age;
+
+
+    String phone;
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getRealname() {
+        return realname;
+    }
+
+    public void setRealname(String realname) {
+        this.realname = realname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
 
     public int getId() {
         return id;
