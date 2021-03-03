@@ -52,12 +52,14 @@
 </div>
 
 <script>
+
     var getfilemsg;
     $("#file").change(function(){
         getfilemsg = $(this).val();
         var result =  $(this).val();
         console.log(result);
         var _URL = window.URL || window.webkitURL
+        console.log(_URL);
         var file,img;
         let filename = result;
         let filenames = filename.split('\\');
@@ -76,6 +78,8 @@
             };
             img.src = _URL.createObjectURL(file);
         }
+
+        )
     });
 
 </script>
